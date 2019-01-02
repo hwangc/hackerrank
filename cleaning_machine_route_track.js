@@ -31,15 +31,18 @@ rl.on('line', (input) => {
       }
       // Right walls 
       for(var rRight=i; rRight<iR-1-i; rRight++) {
-        aRC[rRight][iC-1-i] = blockNum++;
+        if(blockNum <= iR*iC)
+          aRC[rRight][iC-1-i] = blockNum++;
       }
       // Bottom walls
       for(var cBottom=iC-1-i; cBottom>i; cBottom--) {
-        aRC[iR-1-i][cBottom] = blockNum++;
+        if(blockNum <= iR*iC)
+          aRC[iR-1-i][cBottom] = blockNum++;
       }
       // Left walls
       for(var rLeft=iR-1-i; rLeft>i; rLeft--) {
-        aRC[rLeft][i] = blockNum++;
+        if(blockNum <= iR*iC)
+          aRC[rLeft][i] = blockNum++;
       }
       // Inc i counter
       i++;
